@@ -8,9 +8,11 @@ function App() {
   return (
     <Router>
       {/* <Home /> */}
+      <Switch>
     <Route exact path='/' component={Home} />
     <Route path='/book' component={BookServicePage} />
       {/* <BookServicePage /> */}
+      </Switch>
     </Router>
   );
 }

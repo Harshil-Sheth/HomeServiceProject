@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SUBSERVICE_DATA from './Subservice.data';
 import SubserviceCollection from '../../components/subservice-collection/subservice-collection.component'
 import './BookServicePage.styles.css'
+import Navbar from '../../components/booknavbar/navbar.components';
+import Footer from '../../components/footer/footer.components';
 
 
 class BookServicePage extends Component {
@@ -14,12 +16,16 @@ class BookServicePage extends Component {
     render() {
       const { subservices } = this.state;
         return (
+        <div>
+        <Navbar />
             <div className='bookservicepage'>{
               subservices.map(({ id, ...otherSubservicesProps }) =>(
                 <SubserviceCollection key={id} {...otherSubservicesProps} />
               ))}
             </div>
-        );
+        <Footer />
+          </div>
+            );
     }
 }
 
