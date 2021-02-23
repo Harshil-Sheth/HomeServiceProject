@@ -25,6 +25,39 @@ const Navbar = ( {toggle} ) => {
         scroll.scrollToTop();
     }
 
+    // const scrollToServices = () => {
+    //     window.scrollTo({
+    //         top: 770,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //       });
+    // }
+
+    // const scrollToAbout = () => {
+    //     window.scrollTo({
+    //         top: 1950,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //       });
+    // }
+
+    // const scrollToFaq = () => {
+    //     window.scrollTo({
+    //         top: 3900,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //       });
+    // }
+
+    // const scrollToContact = () => {
+    //     window.scrollTo({
+    //         top: 4900,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //       });
+    // }
+
+
     return (   
         <>  
             <Nav scrollNav={scrollNav}>
@@ -36,47 +69,51 @@ const Navbar = ( {toggle} ) => {
                     <NavMenu>
                         <NavItem>
                             <NavLinks to='/'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-80}
+                            // smooth={true}
+                            // duration={500}
+                            // spy={true}
+                            // exact='true'
+                            // offset={-80}
                             >Home</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to='/'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-65}
+                            // onClick={scrollToServices}
+                            // smooth={true}
+                            // duration={500}
+                            // spy={true}
+                            // exact='true'
+                            // offset={-65}
                             >Services</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to='/'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-65}
+                            // onClick={scrollToAbout}
+                            // smooth={true}
+                            // duration={500}
+                            // spy={true}
+                            // exact='true'
+                            // offset={-65}
                             >About</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to='/'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-65}
+                            // onClick={scrollToFaq}
+                            // smooth={true}
+                            // duration={500}
+                            // spy={true}
+                            // exact='true'
+                            // offset={-65}
                             >FAQ</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to='/'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-55}
+                            // onClick={scrollToContact}
+                            // smooth={true}
+                            // duration={500}
+                            // spy={true}
+                            // exact='true'
+                            // offset={-55}
                             >Contact</NavLinks>
                         </NavItem>
                         {/* <NavItem>

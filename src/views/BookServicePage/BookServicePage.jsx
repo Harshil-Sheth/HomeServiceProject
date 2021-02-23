@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SUBSERVICE_DATA from './Subservice.data';
 import SubserviceCollection from '../../components/subservice-collection/subservice-collection.component'
 import './BookServicePage.styles.css'
-import Navbar from '../../components/booknavbar/navbar.components';
+import Navbar from '../../components/navabar/navbar.components';
 import Footer from '../../components/footer/footer.components';
 
 

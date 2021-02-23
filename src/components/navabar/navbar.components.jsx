@@ -1,33 +1,38 @@
-import React, {useState, useEffect} from 'react';
+import React /*, {useState, useEffect}*/ from 'react';
 import { FaBars } from 'react-icons/fa'
 import {Nav, NavLogo, NavbarContainer, MobileIcon, NavItem, NavMenu, NavLinks, NavBtn, NavBtnLink} from "./navbar.styles"
 import image from './crown.svg'
+import { withRouter } from 'react-router-dom';
+
 import { animateScroll as scroll } from 'react-scroll';
 
-const Navbar = ( {toggle} ) => {
+const Navbar = ( {toggle,history} ) => {
 
-    const [scrollNav, setscrollNav] = useState(false)
+    // const [scrollNav, setscrollNav] = useState(false)
 
-    const changeNav = () => {
-        if(window.scrollY >= 80){
-            setscrollNav(true)
-        }
-        else{
-            setscrollNav(false)
+    // const changeNav = () => {
+    //     if(window.scrollY >= 80){
+    //         setscrollNav(true)
+    //     }
+    //     else{
+    //         setscrollNav(false)
 
-        }
-    }
+    //     }
+    // }
 
-    useEffect(() => {
-        window.addEventListener('scroll',changeNav)
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener('scroll',changeNav)
+    // }, []);
     const toggleHome = () =>{
+        scroll.scrollToTop();
+    }
+    const toggleSignIn = () =>{
         scroll.scrollToTop();
     }
 
     return (   
         <>  
-            <Nav scrollNav={scrollNav}>
+            <Nav /*scrollNav={scrollNav}*/>
                 <NavbarContainer>
                     <NavLogo to='/' onClick={toggleHome}><img src={image} alt='logo' style={{height:"40px"}} /></NavLogo>
                     <MobileIcon onClick={toggle} >
@@ -35,7 +40,9 @@ const Navbar = ( {toggle} ) => {
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to='home'
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='home'
                             smooth={true}
                             duration={500}
                             spy={true}
@@ -44,7 +51,9 @@ const Navbar = ( {toggle} ) => {
                             >Home</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='services'
+                            <NavLinks
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='services'
                             smooth={true}
                             duration={500}
                             spy={true}
@@ -53,7 +62,9 @@ const Navbar = ( {toggle} ) => {
                             >Services</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='about'
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='about'
                             smooth={true}
                             duration={500}
                             spy={true}
@@ -62,7 +73,9 @@ const Navbar = ( {toggle} ) => {
                             >About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='faq'
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='faq'
                             smooth={true}
                             duration={500}
                             spy={true}
@@ -71,7 +84,9 @@ const Navbar = ( {toggle} ) => {
                             >FAQ</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='contact'
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='contact'
                             smooth={true}
                             duration={500}
                             spy={true}
@@ -84,7 +99,7 @@ const Navbar = ( {toggle} ) => {
                         </NavItem> */}
                     </NavMenu>
                     <NavBtn>
-                        <NavBtnLink to='signin'>Sign In</NavBtnLink>
+                        <NavBtnLink to='signin' onClick={toggleSignIn}>Sign In</NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
@@ -92,4 +107,4 @@ const Navbar = ( {toggle} ) => {
     )
 }
 
-export default Navbar;
+export default withRouter(Navbar);
