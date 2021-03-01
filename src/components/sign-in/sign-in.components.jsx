@@ -9,7 +9,9 @@ class SignIn extends React.Component {
         super(props);
         this.state={
             email: '',
-            password:''
+            password:'',
+            login: false,
+            storage: null
         }
     }    
 
@@ -20,6 +22,7 @@ class SignIn extends React.Component {
             {
             email: '',
             password:''
+            
     })
     }
     handleChange= (event)=>{
@@ -27,11 +30,27 @@ class SignIn extends React.Component {
 
         this.setState({[name]:value})
     }
+    login(){
+        fetch('http://localhost:4000/api/Signin',{
+            method:'POST',
+            // contentType:'application/json',
+            body:JSON.stringify(this.state)
+        }).then((response)=>{
+            response.json().then((result)=>{
+                console.log('result',result);
+                localStorage.setItem('login',JSON.stringify({
+                    login:true,
+                    token:result.token
+                }))
+            })
+        })
+    }
+
 
     render() {
         return (
             <div className='sign-in'>
-                <h2>I Already Have an Account</h2>
+                <h2 className='title'>I Already Have an Account</h2>
                 <span>Sign In With Your Email and Password</span>
 
                 <form onSubmit={this.handleSubmit}>
@@ -40,7 +59,7 @@ class SignIn extends React.Component {
                     <FormInput name='password' type='password' label='password' value={this.state.password} handleChange={this.handleChange} required />
                     {/* <label>Password</label> */}
 
-                    <CustomButton type="submit">Sign In</CustomButton>
+                    <CustomButton type="submit" onClick={()=>{this.login()}} >Sign In</CustomButton>
                 </form>
             </div>
         );

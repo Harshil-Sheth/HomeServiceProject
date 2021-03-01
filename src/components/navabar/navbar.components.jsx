@@ -55,7 +55,7 @@ const Navbar = ( {toggle,history} ) => {
                             onClick={(e) => {e.preventDefault(); history.push('/')}}
                             to='services'
                             smooth={true}
-                            duration={500}
+                            duration={600}
                             spy={true}
                             exact='true'
                             offset={-65}
@@ -66,7 +66,7 @@ const Navbar = ( {toggle,history} ) => {
                             onClick={(e) => {e.preventDefault(); history.push('/')}}
                             to='about'
                             smooth={true}
-                            duration={500}
+                            duration={700}
                             spy={true}
                             exact='true'
                             offset={-65}
@@ -77,7 +77,7 @@ const Navbar = ( {toggle,history} ) => {
                             onClick={(e) => {e.preventDefault(); history.push('/')}}
                             to='faq'
                             smooth={true}
-                            duration={500}
+                            duration={800}
                             spy={true}
                             exact='true'
                             offset={-65}
@@ -88,7 +88,7 @@ const Navbar = ( {toggle,history} ) => {
                             onClick={(e) => {e.preventDefault(); history.push('/')}}
                             to='contact'
                             smooth={true}
-                            duration={500}
+                            duration={900}
                             spy={true}
                             exact='true'
                             offset={-55}

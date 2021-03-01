@@ -1,7 +1,9 @@
 import React from 'react'
 import './footer.styles.css'
+import { NavLinks } from '../navabar/navbar.styles';
+import { withRouter } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = ( {history} ) => {
     return (
         <footer className="footer">
             <div className="container bottom_border">
@@ -10,42 +12,75 @@ const Footer = () => {
                         <h5 className="headin5_amrc col_white_amrc pt2">Find us</h5>
             {/* <!--headin5_amrc--> */}
                         {/* <p className="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> */}
-                        <p><i className="fa fa-location-arrow"></i> 9878/25 sec 9 rohini road 35 block </p>
-                        <p><i className="fa fa-phone"></i>  +91-9999878398  </p>
-                        <p><i className="fa fa fa-envelope"></i> info@example.com  </p>
+                        <p><i className="fa fa-location-arrow"></i> CH-4, GatewayCorp Office, S.G Highway, Ahmedabad. </p>
+                        <p><i className="fa fa-phone"></i>  +91-9426553286  </p>
+                        <p><i className="fa fa fa-envelope"></i> harshilsheth181888@gmail.com  </p>
 
 
                     </div>
 
 
                     <div className=" col-sm-4 col-md  col-6 col">
-                        <h5 className="headin5_amrc col_white_amrc pt2">Links</h5>
+                        <h5 className="headin5_amrc col_white_amrc pt2 head">Useful Links</h5>
                         {/* <!--headin5_amrc--> */}
                         <ul className="footer_ul_amrc">
-                        <li><a href="http://webenlance.com">Home</a></li>
-                        <li><a href="http://webenlance.com">Services</a></li>
-                        <li><a href="http://webenlance.com">About</a></li>
-                        <li><a href="http://webenlance.com">FAQ</a></li>
-                        <li><a href="http://webenlance.com">Contact</a></li>
-                        <li><a href="http://webenlance.com">Sign Up</a></li>
+                        
+                        <NavLinks
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='home'
+                            smooth={true}
+                            duration={1000}
+                            spy={true}
+                            exact='true'
+                            offset={-80}
+                            ><p>Home</p></NavLinks>
+                        
+                            <NavLinks
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='services'
+                            smooth={true}
+                            duration={900}
+                            spy={true}
+                            exact='true'
+                            offset={-65}
+                            ><p>Sevices</p></NavLinks>
+                        
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='about'
+                            smooth={true}
+                            duration={800}
+                            spy={true}
+                            exact='true'
+                            offset={-65}
+                            ><p>About</p></NavLinks>
+                        
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='faq'
+                            smooth={true}
+                            duration={700}
+                            spy={true}
+                            exact='true'
+                            offset={-65}
+                            ><p>FAQ</p></NavLinks>
+                        
+                            <NavLinks 
+                            onClick={(e) => {e.preventDefault(); history.push('/')}}
+                            to='contact'
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact='true'
+                            offset={-55}
+                            ><p>Contact</p></NavLinks>
+                        
                         </ul>
             {/* <!--footer_ul_amrc ends here--> */}
                     </div>
 
 
-                    <div className=" col-sm-4 col-md  col-6 col">
-                        <h5 className="headin5_amrc col_white_amrc pt2">Careers</h5>
-                        {/* <!--headin5_amrc--> */}
-                        <ul className="footer_ul_amrc">
-                        <li><a href="http://webenlance.com">Job Openings</a></li>
-                        <li><a href="http://webenlance.com">Service Providers</a></li>
-                        <li><a href="http://webenlance.com">Success</a></li>
-                        <li><a href="http://webenlance.com">Benefits</a></li>
-                        {/* <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li> */}
-                        {/* <li><a href="http://webenlance.com">Image Cropping</a></li> */}
-                        </ul>
-                        {/* <!--footer_ul_amrc ends here--> */}
-                    </div>
+                    
 
 
                     <div className=" col-sm-4 col-md  col-12 col">
@@ -60,16 +95,8 @@ const Footer = () => {
 
 
             <div className="container">
-                {/* <ul className="foote_bottom_ul_amrc">
-                <li><a href="http://webenlance.com">Home</a></li>
-                <li><a href="http://webenlance.com">About</a></li>
-                <li><a href="http://webenlance.com">Services</a></li>
-                <li><a href="http://webenlance.com">Pricing</a></li>
-                <li><a href="http://webenlance.com">Contact</a></li>
-                <li><a href="http://webenlance.com">Blog</a></li>
-                </ul> */}
                 {/* <!--foote_bottom_ul_amrc ends here--> */}
-                <p className="text-center copyright">Copyright ©2021 All Rights Reserved | Designed by <a href="#1">We Care home Care</a></p>
+                <p className="text-center copyright">Copyright ©2021 All Rights Reserved | Designed by <a href="/">We Care home Care</a></p>
 
                 <ul className="social_footer_ul">
                 <li><a href="http://facebook.com"><i className="fab fa-facebook-f"></i></a></li>
@@ -85,7 +112,7 @@ const Footer = () => {
         )
 }
 
-export default Footer
+export default withRouter(Footer)
 
 
 
